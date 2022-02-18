@@ -1,0 +1,24 @@
+<div
+  [ngClass]="{ reminder: task?.reminder }"
+  class="task"
+  (dblclick)="Toggle(task)"
+>
+  <h3>
+    {{ task?.text }}
+    <fa-icon
+      [ngStyle]="{ color: 'red' }"
+      [icon]="faTimes"
+      (click)="onDelete(task)"
+    >
+    </fa-icon>
+  </h3>
+  <br />
+
+  <div [ngStyle]="{ 'margin-bottom': '10px' }">
+    <p [ngStyle]="{ float: 'left' }">{{ task?.day }}</p>
+    <app-toggle-button [ngStyle]="{ float: 'right' }" [task]="task">
+    </app-toggle-button>
+  </div>
+
+  <br />
+</div>
